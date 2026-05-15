@@ -1,0 +1,98 @@
+{
+  "B1DEB1": {
+    "run_id": "R_cbe9547aab",
+    "condition": "one_shot_summary_length_matched",
+    "world_id": "W001",
+    "mode": "unblinded"
+  },
+  "48AAC2": {
+    "run_id": "R_d95b82346b",
+    "condition": "one_shot_synthesis_length_matched",
+    "world_id": "W001",
+    "mode": "unblinded"
+  },
+  "D5AFA3": {
+    "run_id": "R_d8ff2dfe2c",
+    "condition": "one_shot_synthesis_length_matched",
+    "world_id": "W001",
+    "mode": "unblinded"
+  },
+  "F7D68A": {
+    "run_id": "R_ed7968c7d2",
+    "condition": "one_shot_synthesis_length_matched",
+    "world_id": "W001",
+    "mode": "unblinded"
+  },
+  "B8F009": {
+    "run_id": "R_e6806f62e0",
+    "condition": "hub_3input_synthesis",
+    "world_id": "W001",
+    "mode": "unblinded"
+  },
+  "2712F9": {
+    "run_id": "R_3d1120ab88",
+    "condition": "one_shot_summary_length_matched",
+    "world_id": "W001",
+    "mode": "unblinded"
+  },
+  "132AD7": {
+    "run_id": "R_2639675e10",
+    "condition": "one_shot_summary_length_matched",
+    "world_id": "W001",
+    "mode": "unblinded"
+  },
+  "4E4EE0": {
+    "run_id": "R_c49fa4fcb1",
+    "condition": "chain_3hop",
+    "world_id": "W001",
+    "mode": "unblinded"
+  },
+  "22653A": {
+    "run_id": "R_ed7968c7d2",
+    "condition": "one_shot_synthesis_length_matched",
+    "world_id": "W001",
+    "mode": "blinded"
+  },
+  "F4DD07": {
+    "run_id": "R_2639675e10",
+    "condition": "one_shot_summary_length_matched",
+    "world_id": "W001",
+    "mode": "blinded"
+  },
+  "E506D9": {
+    "run_id": "R_d95b82346b",
+    "condition": "one_shot_synthesis_length_matched",
+    "world_id": "W001",
+    "mode": "blinded"
+  },
+  "F7C2A0": {
+    "run_id": "R_3d1120ab88",
+    "condition": "one_shot_summary_length_matched",
+    "world_id": "W001",
+    "mode": "blinded"
+  },
+  "B100B7": {
+    "run_id": "R_c49fa4fcb1",
+    "condition": "chain_3hop",
+    "world_id": "W001",
+    "mode": "blinded"
+  },
+  "E9B035": {
+    "run_id": "R_cbe9547aab",
+    "condition": "one_shot_summary_length_matched",
+    "world_id": "W001",
+    "mode": "blinded"
+  },
+  "4E9904": {
+    "run_id": "R_e6806f62e0",
+    "condition": "hub_3input_synthesis",
+    "world_id": "W001",
+    "mode": "blinded"
+  },
+  "7F47F9": {
+    "run_id": "R_d8ff2dfe2c",
+    "condition": "one_shot_synthesis_length_matched",
+    "world_id": "W001",
+    "mode": "blinded"
+  }
+}

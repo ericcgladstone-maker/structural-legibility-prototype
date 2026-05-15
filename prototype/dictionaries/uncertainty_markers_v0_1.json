@@ -1,0 +1,33 @@
+{
+  "dictionary_id": "uncertainty_markers_v0_1",
+  "description": "Locked dictionary of explicit uncertainty markers. Distinct from hedges in that these are typically explicit statements of unknown or unconfirmed status rather than softeners.",
+  "entries": [
+    "uncertain",
+    "unclear",
+    "unknown",
+    "not confirmed",
+    "not been confirmed",
+    "not yet confirmed",
+    "not ruled out",
+    "has not been ruled out",
+    "cannot be ruled out",
+    "remains possible",
+    "is possible",
+    "is plausible",
+    "to be determined",
+    "tbd",
+    "pending",
+    "preliminary",
+    "tentative",
+    "subject to confirmation",
+    "subject to verification",
+    "awaiting confirmation",
+    "needs verification",
+    "needs further investigation",
+    "under investigation",
+    "is being investigated",
+    "indeterminate",
+    "ambiguous",
+    "inconclusive"
+  ]
+}

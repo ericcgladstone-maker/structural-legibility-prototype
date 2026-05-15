@@ -1,0 +1,7 @@
+Restate the following operational report in your own phrasing so it can be passed to the next recipient. The substance should remain the same. Maintain a neutral, technical tone.
+
+Report received:
+
+{prior_message}
+
+Provide the restated version as continuous prose. No title, header, or closing. Do not introduce new facts. Output only the restated text.

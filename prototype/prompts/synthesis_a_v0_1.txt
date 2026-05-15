@@ -1,0 +1,15 @@
+You have received three partial reports about the same operational event from three different sources. Produce a single integrated report that combines the three. Use neutral, technical language.
+
+Input report A:
+
+{input_a}
+
+Input report B:
+
+{input_b}
+
+Input report C:
+
+{input_c}
+
+Write the integrated report as continuous prose, 4 to 8 sentences. No title or sign-off. Output only the integrated report text.

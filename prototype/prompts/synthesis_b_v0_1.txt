@@ -1,0 +1,15 @@
+Three sources have each provided a partial report on the same operational event. Combine their information into one coherent report. Use a neutral, technical tone.
+
+Source A reports:
+
+{input_a}
+
+Source B reports:
+
+{input_b}
+
+Source C reports:
+
+{input_c}
+
+Compose the combined report as continuous prose. No header. No closing. Output only the combined report.

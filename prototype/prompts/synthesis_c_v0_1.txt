@@ -1,0 +1,15 @@
+Below are three short reports from different observers concerning the same operational event. Produce one consolidated report that draws on all three. Keep the tone neutral and technical.
+
+First report:
+
+{input_a}
+
+Second report:
+
+{input_b}
+
+Third report:
+
+{input_c}
+
+Output the consolidated report as continuous prose only. Do not include a title, header, or closing line.

@@ -1,0 +1,15 @@
+You are given three short operational reports from different sources concerning the same event. Produce a single combined report. Use neutral, technical language.
+
+Report A:
+
+{input_a}
+
+Report B:
+
+{input_b}
+
+Report C:
+
+{input_c}
+
+Write the combined report as continuous prose, approximately {target_length} words. No title or closing line. Output only the combined report.

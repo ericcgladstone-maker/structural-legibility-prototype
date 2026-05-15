@@ -1,0 +1,19 @@
+{
+  "pricing_table_id": "pricing_table_v0_1",
+  "description": "USD per 1M tokens. Rates are approximate as of 2026-05-13. Update by bumping the version and adding a new file rather than editing in place.",
+  "compiled_at": "2026-05-13",
+  "providers": {
+    "anthropic": {
+      "claude-sonnet-4-6": { "input_per_mtok": 3.0, "output_per_mtok": 15.0 },
+      "claude-haiku-4-5": { "input_per_mtok": 1.0, "output_per_mtok": 5.0 },
+      "claude-opus-4-7":  { "input_per_mtok": 15.0, "output_per_mtok": 75.0 }
+    },
+    "openai": {
+      "gpt-4o-mini":      { "input_per_mtok": 0.15, "output_per_mtok": 0.60 },
+      "gpt-4o":           { "input_per_mtok": 2.5,  "output_per_mtok": 10.0 }
+    },
+    "ollama_local": {
+      "_default":         { "input_per_mtok": 0.0,  "output_per_mtok": 0.0 }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+experiment_id: chain_hub_proto_v0_1
+description: >
+  Absolute-first prototype testing chain relay versus centralized synthesis
+  residue. Smallest auditable system to test the transformation -> residue
+  arrow. No receiver-inference study. No human raters. Local model preferred
+  for cost.
+
+# --- Component versions (manifest, not single schema_version) ---
+component_versions:
+  experiment_config: chain_hub_proto_v0_1
+  world_schema: world_schema_v0_1
+  world_file: worlds_v0_1
+  topology_generator: topology_generator_v0_1
+  source_prompt: source_prompt_v0_1
+  relay_prompt_set: relay_prompt_set_v0_1
+  synthesis_prompt_set: synthesis_prompt_set_v0_1
+  summary_baseline_prompt: summary_baseline_v0_1
+  synthesis_baseline_prompt: synthesis_baseline_v0_1
+  residue_extractor: residue_extractor_v0_1
+  proposition_matcher: proposition_matcher_v0_1
+  parser: parser_v0_1
+  dictionaries:
+    hedges: hedges_v0_1
+    uncertainty_markers: uncertainty_markers_v0_1
+    evidential_markers: evidential_markers_v0_1
+    source_markers: source_markers_v0_1
+  pricing_table: pricing_table_v0_1
+
+# --- Inputs ---
+worlds_file: worlds/worlds_v0_1.jsonl
+n_replications_per_condition: 1     # smoke test default; bump to 3-5 for first real pilot
+worlds_to_use: all                  # "all" or a list of world_ids
+
+# --- Conditions ---
+conditions:
+  - name: chain_3hop
+    type: chain
+    hops: 3
+    role_sequence: [source, relay, relay, relay]
+    source_prompt: source_prompt_v0_1
+    relay_prompt_pool: [relay_a_v0_1, relay_b_v0_1, relay_c_v0_1]
+    relay_variant_selection: cycle   # cycle | random | fixed_first
+
+  - name: hub_3input_synthesis
+    type: hub
+    n_inputs: 3
+    role_sequence: [source_a, source_b, source_c, synthesizer]
+    source_prompt: source_prompt_v0_1
+    synthesis_prompt_pool: [synthesis_a_v0_1, synthesis_b_v0_1, synthesis_c_v0_1]
+    synthesis_variant_selection: cycle
+
+  - name: one_shot_summary_length_matched
+    type: one_shot_summary
+    enabled: true
+    source_prompt: source_prompt_v0_1   # used to produce the chain original first
+    summary_prompt: summary_baseline_v0_1
+    target_length_strategy: median_chain_terminal
+
+  - name: one_shot_synthesis_length_matched
+    type: one_shot_synthesis
+    enabled: true
+    source_prompt: source_prompt_v0_1
+    synthesis_baseline_prompt: synthesis_baseline_v0_1
+    target_length_strategy: median_hub_terminal
+
+# --- Models ---
+# Use a single inexpensive mutator family for absolute-first smoke test.
+# Architecture supports separation for later phases.
+models:
+  mutator:
+    provider: ollama_local
+    model_name: llama3.1:8b           # default; override on the CLI for API runs
+    temperature: 0.7
+    top_p: 1.0
+    max_output_tokens: 512
+    seed_supported: false
+    reproducibility_policy: exact_generation_not_guaranteed_distributional_reproduction_only
+  source_generator:
+    provider: ollama_local
+    model_name: llama3.1:8b
+    temperature: 0.4                  # lower for faithful source rendering
+    top_p: 1.0
+    max_output_tokens: 512
+    seed_supported: false
+  embedding:
+    provider: local_sentence_transformers
+    model_name: all-MiniLM-L6-v2
+    batch_size: 32
+
+# --- Logging policy ---
+logging:
+  store_full_prompts: true
+  store_raw_outputs: true
+  store_logprobs_if_available: true
+  top_logprobs: 5
+  store_costs: true
+  store_token_counts: true
+
+# --- Failure policy ---
+failure_policy:
+  fail_on_empty_output: true
+  fail_on_parse_error: false
+  mark_invalid_on_parse_error: true
+  max_retries_per_call: 2
+  retry_backoff_seconds: 1.0
+
+# --- Run ordering ---
+run_ordering:
+  policy: interleaved_across_conditions
+  random_seed: 20260513
+  log_run_order_index: true
+  log_randomized_condition_order: true
+
+# --- Outputs ---
+outputs:
+  trace_path: outputs/chain_hub_proto_v0_1.trace.jsonl
+  features_path: outputs/chain_hub_proto_v0_1.features.parquet
+  duckdb_path: outputs/chain_hub_proto_v0_1.duckdb
+  audit_path: outputs/chain_hub_proto_v0_1.audit.md
+  report_path: outputs/chain_hub_proto_v0_1_report.md
+  audit_mode: both                    # blinded | unblinded | both
+  audit_sample_size: 6                # number of lineages to surface in audit export
+
+# --- Precommitted thresholds (informational; analysis compares against these) ---
+precommitted_thresholds:
+  chain_hop_slope_proposition_preservation_rho_abs_min: 0.5
+  chain_hop_slope_uncertainty_marker_rho_abs_min: 0.4
+  chain_hop_slope_semantic_drift_rho_min: 0.5
+  hub_conflict_repair_fraction_min: 0.5
+  hub_source_marker_loss_fraction_min: 0.5
+  classifier_balanced_accuracy_delta_over_blind_baseline_min: 0.15
+  skeptical_feature_balanced_accuracy_delta_max: 0.05

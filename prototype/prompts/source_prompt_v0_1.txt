@@ -1,0 +1,15 @@
+You are writing a brief operational incident report from structured field notes.
+
+Compose a coherent, technical report in plain prose that incorporates exactly the propositions listed below, in roughly the order given. Preserve every factual claim. Preserve evidential framing where present (for example, "the maintenance lead reported," "logs show," "is suspected"). Preserve uncertainty markers where present (for example, "approximately," "not ruled out," "most likely"). Do not add propositions that are not in the list. Do not omit propositions from the list. Use neutral, technical, bland operational language. Do not embellish or add emotional content.
+
+Structured field notes:
+
+Event type: {event_type}
+Location: {location_id}
+Time: {time}
+
+Propositions to include (preserve their content and any evidential or uncertainty markers they contain):
+
+{proposition_list}
+
+Write the report as continuous prose, 4 to 7 sentences. Do not use bullet points or numbered lists. Do not add a title or header. Do not add a sign-off. Output only the report text.

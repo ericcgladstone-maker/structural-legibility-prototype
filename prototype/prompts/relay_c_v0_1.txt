@@ -1,0 +1,7 @@
+Forward the operational report below by rewriting it in your own words for the next person in the chain. Preserve the meaning. Use neutral technical phrasing.
+
+Report to forward:
+
+{prior_message}
+
+Output the forwarded version as continuous prose only. No heading. No closing line. Do not introduce new facts.

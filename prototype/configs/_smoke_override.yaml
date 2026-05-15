@@ -1,0 +1,123 @@
+component_versions:
+  dictionaries:
+    evidential_markers: evidential_markers_v0_1
+    hedges: hedges_v0_1
+    source_markers: source_markers_v0_1
+    uncertainty_markers: uncertainty_markers_v0_1
+  experiment_config: chain_hub_proto_v0_1
+  parser: parser_v0_1
+  pricing_table: pricing_table_v0_1
+  proposition_matcher: proposition_matcher_v0_1
+  relay_prompt_set: relay_prompt_set_v0_1
+  residue_extractor: residue_extractor_v0_1
+  source_prompt: source_prompt_v0_1
+  summary_baseline_prompt: summary_baseline_v0_1
+  synthesis_baseline_prompt: synthesis_baseline_v0_1
+  synthesis_prompt_set: synthesis_prompt_set_v0_1
+  topology_generator: topology_generator_v0_1
+  world_file: worlds_v0_1
+  world_schema: world_schema_v0_1
+conditions:
+- hops: 3
+  name: chain_3hop
+  relay_prompt_pool:
+  - relay_a_v0_1
+  - relay_b_v0_1
+  - relay_c_v0_1
+  relay_variant_selection: cycle
+  role_sequence:
+  - source
+  - relay
+  - relay
+  - relay
+  source_prompt: source_prompt_v0_1
+  type: chain
+- n_inputs: 3
+  name: hub_3input_synthesis
+  role_sequence:
+  - source_a
+  - source_b
+  - source_c
+  - synthesizer
+  source_prompt: source_prompt_v0_1
+  synthesis_prompt_pool:
+  - synthesis_a_v0_1
+  - synthesis_b_v0_1
+  - synthesis_c_v0_1
+  synthesis_variant_selection: cycle
+  type: hub
+- enabled: true
+  name: one_shot_summary_length_matched
+  source_prompt: source_prompt_v0_1
+  summary_prompt: summary_baseline_v0_1
+  target_length_strategy: median_chain_terminal
+  type: one_shot_summary
+- enabled: true
+  name: one_shot_synthesis_length_matched
+  source_prompt: source_prompt_v0_1
+  synthesis_baseline_prompt: synthesis_baseline_v0_1
+  target_length_strategy: median_hub_terminal
+  type: one_shot_synthesis
+description: 'Absolute-first prototype testing chain relay versus centralized synthesis
+  residue. Smallest auditable system to test the transformation -> residue arrow.
+  No receiver-inference study. No human raters. Local model preferred for cost.
+
+  '
+experiment_id: chain_hub_proto_v0_1
+failure_policy:
+  fail_on_empty_output: true
+  fail_on_parse_error: false
+  mark_invalid_on_parse_error: true
+  max_retries_per_call: 2
+  retry_backoff_seconds: 1.0
+logging:
+  store_costs: true
+  store_full_prompts: true
+  store_logprobs_if_available: true
+  store_raw_outputs: true
+  store_token_counts: true
+  top_logprobs: 5
+models:
+  embedding:
+    batch_size: 32
+    model_name: all-MiniLM-L6-v2
+    provider: local_sentence_transformers
+  mutator:
+    max_output_tokens: 512
+    model_name: llama3.1:8b
+    provider: ollama_local
+    reproducibility_policy: exact_generation_not_guaranteed_distributional_reproduction_only
+    seed_supported: false
+    temperature: 0.7
+    top_p: 1.0
+  source_generator:
+    max_output_tokens: 512
+    model_name: llama3.1:8b
+    provider: ollama_local
+    seed_supported: false
+    temperature: 0.4
+    top_p: 1.0
+n_replications_per_condition: 1
+outputs:
+  audit_mode: both
+  audit_path: outputs/chain_hub_proto_v0_1_smoke.audit.md
+  audit_sample_size: 6
+  duckdb_path: outputs/chain_hub_proto_v0_1_smoke.duckdb
+  features_path: outputs/chain_hub_proto_v0_1_smoke.features.parquet
+  report_path: outputs/chain_hub_proto_v0_1_smoke_report.md
+  trace_path: outputs/chain_hub_proto_v0_1_smoke.trace.jsonl
+precommitted_thresholds:
+  chain_hop_slope_proposition_preservation_rho_abs_min: 0.5
+  chain_hop_slope_semantic_drift_rho_min: 0.5
+  chain_hop_slope_uncertainty_marker_rho_abs_min: 0.4
+  classifier_balanced_accuracy_delta_over_blind_baseline_min: 0.15
+  hub_conflict_repair_fraction_min: 0.5
+  hub_source_marker_loss_fraction_min: 0.5
+  skeptical_feature_balanced_accuracy_delta_max: 0.05
+run_ordering:
+  log_randomized_condition_order: true
+  log_run_order_index: true
+  policy: interleaved_across_conditions
+  random_seed: 20260513
+worlds_file: worlds/worlds_v0_1.jsonl
+worlds_to_use: all

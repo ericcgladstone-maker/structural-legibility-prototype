@@ -1,0 +1,7 @@
+Summarize the following operational report. Use neutral, technical language.
+
+Report:
+
+{original_message}
+
+Write the summary as continuous prose, approximately {target_length} words. No title or sign-off. Output only the summary text.

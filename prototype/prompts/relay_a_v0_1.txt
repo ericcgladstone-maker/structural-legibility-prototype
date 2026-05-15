@@ -1,0 +1,7 @@
+You are relaying an operational report you have just received. Pass it along to the next recipient in your own words. Keep the report's substance intact. Use neutral, technical language.
+
+Incoming report:
+
+{prior_message}
+
+Write your relayed version as continuous prose. Do not add a title, header, or sign-off. Do not introduce new facts. Output only the relayed text.

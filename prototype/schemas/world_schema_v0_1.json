@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "world_schema_v0_1",
+  "title": "Structural Legibility World State Schema v0.1",
+  "type": "object",
+  "required": [
+    "world_id",
+    "event_type",
+    "location_id",
+    "time",
+    "observed_core_event",
+    "primary_causal_hypothesis",
+    "alternative_causal_hypothesis",
+    "evidence_for_primary_cause",
+    "evidence_for_alternative_cause",
+    "consequence",
+    "mitigation",
+    "uncertainty_fields",
+    "peripheral_operational_detail",
+    "evidence_type_labels",
+    "propositions",
+    "chain_original_propositions",
+    "hub_input_a_propositions",
+    "hub_input_b_propositions",
+    "hub_input_c_propositions",
+    "conflict_propositions"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "world_id": {
+      "type": "string",
+      "pattern": "^W[0-9]{3}$"
+    },
+    "event_type": { "type": "string" },
+    "location_id": { "type": "string" },
+    "time": {
+      "type": "string",
+      "pattern": "^[0-2][0-9]:[0-5][0-9]$"
+    },
+    "observed_core_event": { "type": "string" },
+    "primary_causal_hypothesis": { "type": "string" },
+    "alternative_causal_hypothesis": { "type": "string" },
+    "evidence_for_primary_cause": { "type": "string" },
+    "evidence_for_alternative_cause": { "type": "string" },
+    "consequence": { "type": "string" },
+    "mitigation": { "type": "string" },
+    "uncertainty_fields": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "peripheral_operational_detail": { "type": "string" },
+    "evidence_type_labels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "enum": ["direct_observation", "log_record", "inference", "report", "unknown"]
+      }
+    },
+    "propositions": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 14,
+      "items": {
+        "type": "object",
+        "required": [
+          "proposition_id",
+          "natural_language_claim",
+          "subject",
+          "predicate",
+          "object",
+          "truth_value",
+          "centrality",
+          "uncertainty",
+          "evidence_type",
+          "source_report_assignment"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "proposition_id": {
+            "type": "string",
+            "pattern": "^p[0-9]+$"
+          },
+          "natural_language_claim": { "type": "string" },
+          "subject": { "type": "string" },
+          "predicate": { "type": "string" },
+          "object": { "type": "string" },
+          "truth_value": { "type": "boolean" },
+          "centrality": {
+            "type": "string",
+            "enum": ["core", "causal", "consequence", "mitigation", "peripheral"]
+          },
+          "uncertainty": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+          "evidence_type": {
+            "type": "string",
+            "enum": ["direct_observation", "log_record", "inference", "report", "unknown"]
+          },
+          "source_report_assignment": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["chain_original", "hub_input_a", "hub_input_b", "hub_input_c"]
+            },
+            "minItems": 1
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "chain_original_propositions": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^p[0-9]+$" },
+      "minItems": 6,
+      "maxItems": 10
+    },
+    "hub_input_a_propositions": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^p[0-9]+$" },
+      "minItems": 2
+    },
+    "hub_input_b_propositions": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^p[0-9]+$" },
+      "minItems": 2
+    },
+    "hub_input_c_propositions": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^p[0-9]+$" },
+      "minItems": 2
+    },
+    "conflict_propositions": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": { "type": "string", "pattern": "^p[0-9]+$" },
+        "minItems": 2,
+        "maxItems": 2
+      },
+      "minItems": 1
+    },
+    "notes": { "type": "string" }
+  }
+}
