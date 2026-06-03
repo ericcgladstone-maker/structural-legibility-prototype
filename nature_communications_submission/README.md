@@ -1,37 +1,50 @@
-# Nature Communications submission — replication materials
+# Nature Communications submission — reproducibility deposit
 
 Anonymized for double-blind peer review.
 
-This folder contains rendered figures and analysis scripts for the manuscript *Message residue preserves traces of hidden communication structure*, prepared for submission to *Nature Communications*. The manuscript file itself is not included here. The earlier Social Networks submission materials for the same project are in the sibling `social_networks_submission/` folder of this repository, and the underlying apparatus is in the `prototype/` folder.
+This folder is the data-and-code reproducibility deposit for the manuscript *Message residue preserves traces of hidden communication structure*, prepared for submission to *Nature Communications*. The manuscript text, its rendered figures, its tables, and its Supplementary Information document live in the journal submission and are not duplicated here. This deposit lets a third party regenerate the reported figures and the paired-bootstrap and predicted-label-entropy values from the underlying experimental data.
 
 ## Contents
 
-- `03_figures/main/` — four rendered main figures (vector PDF + 600-dpi PNG):
-  - `Figure_1` — inverse problem and residue classes (two-row schematic, residue card, scope).
-  - `Figure_2` — eight production motifs as directed graphs (2x4 grid, natural-language labels, node-type legend).
-  - `Figure_3` — motif recoverability and reader-instrument alignment. Panel a is the alignment scatter of form-aligned classifier accuracy versus content-attentive reader accuracy, one labeled motif per point, with Wilson 95% CI crosses. Panel b is the paired bars per motif, sorted by form-aligned accuracy.
-  - `Figure_4` — alignment diagnostics. Panel a, full 14-feature versus length-only classifier. Panel b, F1 versus F2 cross-reader-family comparison. Panel c, trace observability sweep across L1, L3, L5, L6.
-- `03_figures/scripts/` — figure-generating Python scripts:
-  - `figure_style.py` is the shared style module (palettes, fonts, Wilson 95% CI helper, JSONL data loaders).
-  - `make_figure_1.py` through `make_figure_4.py` build the four main figures.
-  - `make_si_figure_1.py` through `make_si_figure_3.py` build the three supplementary figures.
-- `05_supplementary_information/figures/` — three supplementary figures (PDF + PNG):
-  - `Supplementary_Figure_1` — aggregate motif-class recovery by reader type and family.
-  - `Supplementary_Figure_2` — row-normalized confusion matrices for both readers on the F1 primary test trials (n = 840), with raw cell counts annotated, the diagonal outlined, and predicted-label Shannon entropy reported beneath each panel.
-  - `Supplementary_Figure_3` — fidelity-posterior versus source-content preservation scatter across n = 4,197 post-validation primary trials, Pearson r = +0.029.
-- `05_supplementary_information/bootstrap_and_entropy.md` — paired bootstrap 95% confidence intervals for two accuracy gaps and predicted-label entropy values for both reader families.
-- `05_supplementary_information/scripts/bootstrap_and_entropy.py` — script that reproduces the bootstrap intervals and entropy values reported in the above document.
+### `data/` — raw experimental data
 
-## What is NOT here
+Twenty fixed event records, four primary-run JSON Lines streams, and the matching cross-reader-family slice. About 130 MB total. Each `*.jsonl` file is one record per line.
 
-- The manuscript markdown, title page, cover letter, and submission-portal-specific files are not included. Those are handled through the journal's submission system.
-- The raw JSONL data files (~140 MB total) are described in the sibling `social_networks_submission/replication_package/data_manifest/README.md` and are hosted separately by size. The figure and bootstrap scripts assume those files are available at `prototype/outputs/` in the original project layout.
+| File | Records | Description |
+|---|---:|---|
+| `worlds_v0_2.jsonl` | 20 | Structured event records that anchor every cell. Each carries a core observed event, competing causal hypotheses with their supporting evidence, peripheral operational details, and a built-in conflict pair with proposition truth values, uncertainty levels, and evidence types. The worlds are synthetic structured records, not empirical events. |
+| `machine_tracing_bprime_v0_1.lineage.jsonl` | 4,200 | Production-graph instantiation records for the primary run: message sequences, persona assignments, hop structure, and the underlying language-model calls. One record per trial. |
+| `machine_tracing_bprime_v0_1.trace_packets.jsonl` | 4,200 | Trace packets as presented to the reader at trace levels L1, L3, L5, and L6, with the validity coefficient applied. |
+| `machine_tracing_bprime_v0_1.receiver.jsonl` | 4,200 | Content-attentive reader (qwen2.5:7b) outputs: parsed JSON with the accuracy posterior, the regime posterior over the eight motifs, the origin posterior over candidate sources, and the independence judgment, plus raw model output and the validator's `invalid` flag. |
+| `machine_tracing_bprime_v0_1.ground_truth.jsonl` | 4,200 | Ground-truth labels per trial: true regime, true source persona, in-set flag, hop count, validity coefficient, and candidate-set size. |
+| `machine_tracing_bprime_v0_1.terminal_features.jsonl` | 4,200 | The 14 surface features extracted per terminal message, plus the proposition-matched preservation rate `true_accuracy_score`. |
+| `machine_tracing_bprime_v0_1.comparator_predictions.jsonl` | 840 | Form-aligned classifier predictions on the test split (worlds W017 to W020). |
+| `machine_tracing_bprime_v0_1.redaction_results.jsonl` | 152 | Before-and-after receiver predictions from the explicit-cue redaction experiment. |
+| `machine_tracing_bprime_v0_1__F2.lineage.jsonl` | 460 | Cross-family slice (llama3.1:8b reader): lineage records. |
+| `machine_tracing_bprime_v0_1__F2.trace_packets.jsonl` | 460 | Cross-family slice: trace packets. |
+| `machine_tracing_bprime_v0_1__F2.receiver.jsonl` | 460 | Cross-family slice: reader outputs. |
+| `machine_tracing_bprime_v0_1__F2.ground_truth.jsonl` | 460 | Cross-family slice: ground-truth labels. |
+| `machine_tracing_bprime_v0_1__F2.terminal_features.jsonl` | 460 | Cross-family slice: terminal-message features. |
+| `machine_tracing_bprime_v0_1__F2.comparator_predictions.jsonl` | 92 | Cross-family slice: comparator predictions on its test split. |
 
-## Reproducibility
+### `scripts/` — analysis and figure-generation code
 
-The figure scripts and the bootstrap script read per-trial data from JSON Lines streams (lineage, trace packets, receiver outputs with the validator's invalid flag preserved per trial, ground-truth labels, terminal-feature extractions, and the trained classifier's per-trial test-split predictions). With those streams in place at the expected path, every reported number in the four main figures, in the three supplementary figures, and in `bootstrap_and_entropy.md` is reproducible by running the corresponding script.
+- `figure_style.py` — shared style module: color palettes, font configuration, Wilson 95% CI helper, JSONL data loaders, motif vocabulary, and output-path helpers used by every figure script.
+- `make_figure_1.py` through `make_figure_4.py` — generate the four main figures (inverse problem and residue classes; eight production motifs; motif recoverability and reader-instrument alignment; alignment diagnostics).
+- `make_si_figure_1.py` through `make_si_figure_3.py` — generate the three supplementary figures (aggregate reader-family comparison; row-normalized confusion matrices with predicted-label Shannon entropy; fidelity posterior versus source-content preservation).
+- `bootstrap_and_entropy.py` — paired bootstrap 95% confidence intervals for the form-aligned-versus-content-attentive accuracy gap and for the full-versus-length-only accuracy gap, plus predicted-label entropy values for both reader families.
 
-Because language-model decoding is stochastic, the reproducibility standard for the upstream generation step is distributional, the same statistical patterns over multiple runs, rather than exact byte-equivalence of specific outputs.
+## How to run
+
+The figure and bootstrap scripts read the JSONL streams from `data/` via the loaders in `figure_style.py`. With the deposit unpacked, each script can be executed independently from this `scripts/` folder. The figure scripts produce vector PDF and 600-dpi PNG outputs. The bootstrap script writes a single Markdown summary with paired-bootstrap intervals and entropy values, and prints a one-line summary to standard output.
+
+The sibling `prototype/` folder of this repository contains the upstream experimental apparatus that generates the data streams above (regime instantiators, trace-packet assembly, residue extractor, proposition matcher, receiver dispatcher, and the experiment orchestrator). The deposit here is sufficient for reproducing the reported analyses and figures from the existing data without re-running the upstream apparatus.
+
+Because language-model decoding is stochastic, the reproducibility standard for the upstream generation step is distributional, the same statistical patterns over multiple runs, rather than exact byte-equivalence of specific outputs. The analyses on the deposited data are deterministic.
+
+## Software
+
+Python 3.9 or later, with `numpy`, `pandas`, `matplotlib`, and `scikit-learn`. Re-running the upstream experimental pipeline additionally requires the language-model dependencies described in `prototype/README.md`.
 
 ## License
 
