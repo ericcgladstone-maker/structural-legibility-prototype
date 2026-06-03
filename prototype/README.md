@@ -217,4 +217,4 @@ Every component carries a `_v0_1` suffix. Versioning is by component, not by exp
 
 ## License and authorship
 
-Research artifact accompanying a manuscript under anonymized peer review. License and authorship details will be added upon publication.
+Research artifact accompanying a manuscript in preparation. License and authorship details will be confirmed at publication.
