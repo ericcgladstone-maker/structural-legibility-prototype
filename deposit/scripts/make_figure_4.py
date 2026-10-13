@@ -23,13 +23,7 @@ import figure_style as fs
 
 fs.apply_style()
 
-PREEMPT_PATH = (
-    fs.PROJECT_ROOT
-    / "Nature Communications Submission"
-    / "00_source_social_networks_submission"
-    / "replication_package"
-    / "paper1_preempt_analyses.json"
-)
+PREEMPT_PATH = fs.DATA_DIR / "paper1_preempt_analyses.json"
 
 
 def panel_length_only(ax) -> None:

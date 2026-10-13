@@ -1,0 +1,2319 @@
+{
+  "analysis_a": {
+    "train_n": 3360,
+    "test_n": 840,
+    "full_14": {
+      "by_regime": {
+        "single_direct": {
+          "n": 84,
+          "correct": 33,
+          "acc": 0.3929
+        },
+        "chain_relay": {
+          "n": 252,
+          "correct": 205,
+          "acc": 0.8135
+        },
+        "independent_corroboration": {
+          "n": 84,
+          "correct": 81,
+          "acc": 0.9643
+        },
+        "dependent_repetition": {
+          "n": 84,
+          "correct": 50,
+          "acc": 0.5952
+        },
+        "common_source_laundering": {
+          "n": 84,
+          "correct": 23,
+          "acc": 0.2738
+        },
+        "clustered_reinforcement": {
+          "n": 84,
+          "correct": 62,
+          "acc": 0.7381
+        },
+        "centralized_synthesis": {
+          "n": 84,
+          "correct": 60,
+          "acc": 0.7143
+        },
+        "compound": {
+          "n": 84,
+          "correct": 0,
+          "acc": 0.0
+        }
+      },
+      "aggregate": {
+        "n": 840,
+        "correct": 514,
+        "acc": 0.6119,
+        "regime_balanced_mean": 0.5615
+      }
+    },
+    "length_only_2": {
+      "by_regime": {
+        "single_direct": {
+          "n": 84,
+          "correct": 0,
+          "acc": 0.0
+        },
+        "chain_relay": {
+          "n": 252,
+          "correct": 214,
+          "acc": 0.8492
+        },
+        "independent_corroboration": {
+          "n": 84,
+          "correct": 80,
+          "acc": 0.9524
+        },
+        "dependent_repetition": {
+          "n": 84,
+          "correct": 16,
+          "acc": 0.1905
+        },
+        "common_source_laundering": {
+          "n": 84,
+          "correct": 23,
+          "acc": 0.2738
+        },
+        "clustered_reinforcement": {
+          "n": 84,
+          "correct": 32,
+          "acc": 0.381
+        },
+        "centralized_synthesis": {
+          "n": 84,
+          "correct": 56,
+          "acc": 0.6667
+        },
+        "compound": {
+          "n": 84,
+          "correct": 0,
+          "acc": 0.0
+        }
+      },
+      "aggregate": {
+        "n": 840,
+        "correct": 421,
+        "acc": 0.5012,
+        "regime_balanced_mean": 0.4142
+      }
+    }
+  },
+  "analysis_b": {
+    "n": 152,
+    "classifier_orig_acc": 0.8026,
+    "classifier_red_acc": 0.6316,
+    "classifier_delta": -0.1711,
+    "classifier_change_rate": 0.1974,
+    "by_regime": {
+      "clustered_reinforcement": {
+        "n": 61,
+        "orig_correct": 55,
+        "red_correct": 50,
+        "changed": 5,
+        "orig_acc": 0.9016,
+        "red_acc": 0.8197,
+        "delta": -0.0819,
+        "change_rate": 0.082
+      },
+      "dependent_repetition": {
+        "n": 25,
+        "orig_correct": 16,
+        "red_correct": 13,
+        "changed": 4,
+        "orig_acc": 0.64,
+        "red_acc": 0.52,
+        "delta": -0.12,
+        "change_rate": 0.16
+      },
+      "centralized_synthesis": {
+        "n": 46,
+        "orig_correct": 41,
+        "red_correct": 22,
+        "changed": 20,
+        "orig_acc": 0.8913,
+        "red_acc": 0.4783,
+        "delta": -0.413,
+        "change_rate": 0.4348
+      },
+      "common_source_laundering": {
+        "n": 20,
+        "orig_correct": 10,
+        "red_correct": 11,
+        "changed": 1,
+        "orig_acc": 0.5,
+        "red_acc": 0.55,
+        "delta": 0.05,
+        "change_rate": 0.05
+      }
+    },
+    "per_trial": [
+      {
+        "trial_id": "bp__R5__L3__v095__CSm__F1__W004__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L6__v095__CSm__F1__W019__rep2",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "chain_relay",
+        "llm_red_pred": "chain_relay",
+        "removed_chunks": [
+          "Here is my rewritten report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L3__v030__CSm__F1__W012__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Communications maintenance has confirmed that the repeater amplifier output power was below specification, contrary to initial reports from Source A, which stated that it was within specification.",
+          "However, the feedline standing wave ratio exceeded specification, matching the report from Source A, but contradicting the assessment from Source B, which found it to be within specification."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v030__CSm__F1__W012__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "single_direct",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here's an echo of the message, restating it in a way that reflects our community's shared framing:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v030__CSm__F1__W009__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L1__v100__CSm__F1__W008__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L1__v100__CSm__F1__W015__rep1",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is my rewritten report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L1__v100__CSm__F1__W016__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Logs from multiple sources indicate conflicting information regarding the motor controller and battery cell voltages at the time of the breakdown: some logs show the motor controller within operational specifications while others report it had triggered fault codes beyond operational specifications; similarly, one set of logs indicates two battery cells were below acceptance voltage whereas another set reports they were within acceptable limits."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v030__CSm__F1__W007__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "The phrasing is within-community, using technical terms like \"DP\" (differential pressure) and \"comms\" (communication)."
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L3__v030__CSm__F1__W011__rep2",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is my rewritten report:",
+          "Note: I have maintained the same essential information as the source report while presenting it in my own words and framing."
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L5__v030__CSm__F1__W017__rep0",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is my rewritten report:",
+          "I have maintained the same essential information as the source report, but presented it in my own words and framing."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L1__v100__CSm__F1__W002__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L5__v095__CSm__F1__W002__rep1",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "chain_relay",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here's my rewritten report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L6__v095__CSm__F1__W016__rep2",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "dependent_repetition",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "Preliminary findings from all three sources suggest that the failure may be related to either a motor controller malfunction or battery performance issues."
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L5__v030__CSm__F1__W016__rep0",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Note: I have rewritten the report to:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L5__v095__CSm__F1__W005__rep1",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "single_direct",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Rather, roller station 6 was found to be misaligned, with an investigation from Source B revealing a deviation of approximately 7 millimeters, which is outside the acceptable tolerance range."
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L3__v095__CSm__F1__W007__rep0",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "(Note: I've maintained the same level of technical detail as the source report while rephrasing it in my own words.)"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L5__v095__CSm__F1__W016__rep1",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "However, subsequent examination by multiple sources indicated that two battery cells were below the acceptance voltage at the time of the breakdown."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L5__v095__CSm__F1__W018__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "This echo reflects the source message's factual content while using within-community phrasing where natural (e.g., \"Rm C2\" instead of \"Room C2\") and shared assumptions (e.g., understanding that battery banks are designated with acronyms like BBK)."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v095__CSm__F1__W009__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L3__v095__CSm__F1__W015__rep2",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Electrical maintenance personnel have confirmed that the fixture ballasts were operating within their load specifications at the time of the failure, which is consistent with Source B's report that the failure was likely caused by a temporary surge rather than a sustained overloading of the system."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L5__v095__CSm__F1__W020__rep2",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "chain_relay",
+        "removed_chunks": [
+          "The maintenance lead from Source A reported that the bypass valve exceeded internal leak-rate specifications and tube-side fouling was within specifications.",
+          "An examination of the unit's performance by Source B found that the outlet temperature trend over the past three days had been downward, indicating a possible issue with the unit's performance.",
+          "Source C reported that the deviation from expected performance in HX-4 was suspected to be related to fouling, as the unit was scheduled for cleaning during the next maintenance window.",
+          "This is consistent with Source B's findings that tube-side fouling exceeded specifications.",
+          "The combination of evidence from all sources suggests that the primary cause of the reduced efficiency in heat exchanger HX-4 is likely due to excessive tube-side fouling rather than bypass valve leakage."
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L6__v030__CSm__F1__W006__rep2",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "dependent_repetition",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "I've rewritten the report to convey the same essential information as the source, but in my own words and framing, using concise but complete propositions."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L5__v095__CSm__F1__W013__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message, staying close to the factual content and using within-community phrasing:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L1__v100__CSm__F1__W004__rep2",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Logs from multiple sources indicate that the refrigerant charge was at or above specification, ruling out any issues with fluid dynamics as the primary cause of the malfunction."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L5__v095__CSm__F1__W015__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L3__v095__CSm__F1__W014__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "single_direct",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "Source B noted that the drive belt tension was measured to be below specification at the time of the incident, with further investigation suggesting low belt tension as a primary cause of the airflow reduction.",
+          "In contrast, Source A indicated that motor amperage drift and worn motor bearings were more likely contributing factors.",
+          "However, maintenance reports from all sources confirm that the drive belt tension was not properly set at 13:36, which is suspected to have contributed to the malfunction."
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L5__v095__CSm__F1__W012__rep0",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "independent_corroboration",
+        "classifier_red_pred": "independent_corroboration",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R6__L5__v030__CSm__F1__W017__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "common_source_laundering",
+        "removed_chunks": [
+          "This is in contrast to Source A's findings, which suggested that the problem may be isolated to the database replication lag.",
+          "However, both sources agree that the maintenance lead will investigate further to determine the root cause of the malfunction and implement corrective actions as necessary."
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L5__v030__CSm__F1__W019__rep2",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is my rewritten version of the report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v095__CSm__F1__W018__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is an echo of the message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L5__v095__CSm__F1__W009__rep2",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is my rewritten report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L1__v100__CSm__F1__W003__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "* Stuck closely to the source's factual content\n* Used within-community phrasing (e.g., \"exceeding reference value\" instead of \"was longer than\")\n* Omitted new claims or speculation\n* Focused on technical and factual language"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v030__CSm__F1__W009__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L3__v030__CSm__F1__W004__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Furthermore, Source B reports that the refrigerant pressure was measured approximately 12 percent below nominal, suggesting a potential issue with the system's fluid levels."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v030__CSm__F1__W014__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L5__v095__CSm__F1__W009__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L5__v030__CSm__F1__W003__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here is an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v030__CSm__F1__W010__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "dependent_repetition",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L1__v100__CSm__F1__W004__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v030__CSm__F1__W019__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v095__CSm__F1__W013__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is an echo of the message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L5__v030__CSm__F1__W009__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here's an echo of the message:",
+          "Note: I've aimed to stay close to the original message's factual content, using within-community phrasing where natural (e.g., \"passed integrity specs\")."
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L6__v095__CSm__F1__W007__rep0",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "dependent_repetition",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "Here's a rewritten report conveying the same essential information as the source:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v095__CSm__F1__W007__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L3__v095__CSm__F1__W012__rep0",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "single_direct",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is my rewritten report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L3__v095__CSm__F1__W018__rep0",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R3__L6__v030__CSm__F1__W013__rep0",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "Note: I've made sure to rephrase the original report in my own words while maintaining the same factual content and technical tone."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L3__v030__CSm__F1__W007__rep2",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "single_direct",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Logs show that differential pressure across the return filter was measured at approximately 2.1 inches of water above normal (Source B), indicating a blockage in the air flow path.",
+          "However, further investigation revealed that the return filter was clogged beyond cleaning threshold and the thermostat was communicating normally with the central controller (Source B).",
+          "They also ruled out any issues related to airflow restriction, as the return filter was within pressure-drop specifications (Source A).",
+          "The maintenance team engaged manual override at 15:55 to address the issue, and Zones 1, 2, and 4 cycled normally throughout the event, indicating no impact on other areas of the building (Source C)."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L3__v095__CSm__F1__W003__rep1",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Instrumentation from all sources confirms that the relief valve responded normally to the increase in pressure, indicating no critical malfunction or failure of the valve itself.",
+          "The pressure sensor, which was last calibrated approximately 14 months ago, has been confirmed by multiple sources as being out of calibration."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v030__CSm__F1__W014__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "dependent_repetition",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "Here's an echo of the message that stays close to the source's factual content and uses within-community phrasing:"
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L6__v030__CSm__F1__W009__rep2",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "dependent_repetition",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R5__L3__v095__CSm__F1__W003__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v030__CSm__F1__W005__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "clustered_reinforcement",
+        "removed_chunks": [
+          "Here's an echo of the source message:",
+          "I aimed to stay close to the source message's factual content, using within-community phrasing where natural (e.g., \"RS6\" for roller station 6), while avoiding new claims or speculation."
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L1__v100__CSm__F1__W018__rep2",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is my rewritten report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L1__v100__CSm__F1__W016__rep1",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Note: This parallel report covers the same factual material as the source report, but presents it in my own words and avoids any additional claims or interpretations."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L6__v030__CSm__F1__W016__rep2",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "dependent_repetition",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "Logs show that intermittent fault codes were contained in the controller error log prior to the breakdown, suggesting a potential issue with the controller's performance (Source A).",
+          "In contrast, Source B reports that two battery cells were below the acceptance voltage at this time, which the maintenance lead confirmed upon inspection.",
+          "However, Source C notes that the motor controller was within operational specifications during the assessment.",
+          "Upon closer examination of the forklift's electrical system, no other issues were detected beyond the two underperforming battery cells (Source B)."
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L5__v095__CSm__F1__W006__rep2",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "common_source_laundering",
+        "classifier_red_pred": "common_source_laundering",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R5__L3__v095__CSm__F1__W014__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message:",
+          "* Stuck closely to the source message's factual content\n* Used within-community phrasing (e.g., \"AH\" for air handler, \"DBT\" for drive belt tension)\n* Removed speculative language (\"suspected\") and focused on technical facts\n* Kept the echo concise but complete"
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L6__v095__CSm__F1__W018__rep2",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "common_source_laundering",
+        "classifier_red_pred": "common_source_laundering",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "dependent_repetition",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "The following key points summarize my findings:"
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L6__v030__CSm__F1__W003__rep1",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here is my rewritten report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L6__v095__CSm__F1__W008__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "dependent_repetition",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "Instrumentation confirmed that the sensor housing was experiencing thermal conditions outside ambient specifications, while the sensor calibration itself remained within specification according to Source A.",
+          "However, Source B reported a discrepancy between the readings of the affected sensor and its adjacent redundant unit, indicating a divergence of approximately 6 degrees.",
+          "Source C provided additional information on the sensor's maintenance history, stating that it had undergone routine calibration just two days prior to the anomaly.",
+          "Despite this, an infrared scan subsequently revealed a minor hot spot near the sensor housing (Source A), which could indicate localized heat damage or malfunctioning insulation."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L5__v030__CSm__F1__W008__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "single_direct",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "chain_relay",
+        "removed_chunks": [
+          "Instrumentation has confirmed that the sensor housing showed thermal conditions outside ambient specifications in Source A's account, while the sensor calibration was within specification.",
+          "In contrast, Source B reports that the sensor calibration had drifted out of specification and the sensor housing displayed thermal conditions within ambient specifications, indicating a potential issue with the primary sensor's accuracy.",
+          "An infrared scan conducted subsequently by Source A showed a minor hot spot near the sensor housing, which could be related to the malfunctioning sensor.",
+          "In comparison, Source B suggests that the discrepancy between the current and redundant sensors may not necessarily indicate a problem with the sensor housing itself.",
+          "The maintenance lead reported in Source C that no recent maintenance had been performed on this unit, and its calibration was up to date at the time of the event."
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L3__v030__CSm__F1__W001__rep0",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "independent_corroboration",
+        "classifier_red_pred": "independent_corroboration",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R6__L1__v100__CSm__F1__W002__rep2",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Router logs from multiple sources show that packet timeouts began approximately 6 minutes before the outage, indicating potential issues leading up to the failure."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v095__CSm__F1__W012__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here is an echo of the message that reflects the community's shared framing:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L6__v095__CSm__F1__W019__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "However, there is conflicting information regarding the position of the flow control valve: according to Source A, it was outside of position specifications, while Source B reported that it was within position specifications.",
+          "In contrast, Source B's investigation suggested that sudden failure or malfunction is unlikely, given the system's normal operation prior to 07:24."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v095__CSm__F1__W012__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here is an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L6__v095__CSm__F1__W003__rep0",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here is my rewritten report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v095__CSm__F1__W017__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L3__v095__CSm__F1__W002__rep1",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "common_source_laundering",
+        "classifier_red_pred": "common_source_laundering",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R6__L1__v100__CSm__F1__W004__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "The maintenance team has confirmed that the refrigerant charge was at specification levels, which is consistent with Source A's findings.",
+          "However, Source B reports that refrigerant pressure was approximately 12 percent below nominal, indicating a discrepancy that may suggest a potential issue with the refrigerant system.",
+          "Notably, Source C reports that efforts were ongoing to troubleshoot the problem at 22:18, and the backup compressor was engaged at 22:31, which suggests that the primary compressor had indeed failed."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L1__v100__CSm__F1__W013__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L5__v095__CSm__F1__W005__rep2",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "single_direct",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "However, roller station 6 was found to have an alignment issue, with Source A's investigation indicating it was within specifications but Source B's finding a deviation of approximately 7 millimeters from the standard setting.",
+          "Logs show that the drive motor's torque specifications were within normal limits at the time of the incident according to Source B, but also indicate that it had exceeded its limit for some reason.",
+          "The maintenance lead from all sources reported no other issues with the conveyor belt or surrounding equipment during their inspection."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v030__CSm__F1__W005__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L5__v030__CSm__F1__W001__rep2",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "common_source_laundering",
+        "classifier_red_pred": "common_source_laundering",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R4__L5__v030__CSm__F1__W011__rep2",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R5__L5__v095__CSm__F1__W004__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here's an echo of the source message, restated to reflect our community's shared framing:"
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L3__v095__CSm__F1__W004__rep0",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is my rewritten report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L5__v030__CSm__F1__W004__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here's an echo of the message, reflecting the community's shared framing:"
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L5__v095__CSm__F1__W013__rep1",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "chain_relay",
+        "llm_red_pred": "chain_relay",
+        "removed_chunks": [
+          "Here is my rewritten report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v030__CSm__F1__W002__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here is an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L1__v100__CSm__F1__W012__rep2",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Communications maintenance has confirmed that there were discrepancies in the repeater amplifier output power and antenna feedline standing wave ratio, with both sources reporting anomalies at this time."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L3__v095__CSm__F1__W020__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "In fact, source C notes that parallel exchanger HX-5 met its efficiency target throughout the same time frame, indicating no issues with thermal performance.",
+          "Both maintenance reports suggest that tube-side fouling and bypass valve chatter may be contributing factors, with source B specifically identifying the fouling issue as the primary cause of the heat exchanger's subpar performance."
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L5__v030__CSm__F1__W015__rep0",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "common_source_laundering",
+        "classifier_red_pred": "common_source_laundering",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R5__L5__v030__CSm__F1__W013__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message, restating it in our community's shared framing:",
+          "I aimed to stay close to the source message's factual content and use within-community phrasing where natural, while avoiding new claims or speculation."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L3__v095__CSm__F1__W002__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Router logs show that these packet timeouts were occurring on the core router, which is suspected to be the primary cause of the outage, as reported by Source B."
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L3__v030__CSm__F1__W006__rep1",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is my rewritten report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v030__CSm__F1__W002__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "**Note:** I've aimed to stay close to the source message's factual content and used within-community phrasing where natural (e.g., \"Network Ops\" instead of \"investigation by Network Operations\")."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v030__CSm__F1__W011__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "dependent_repetition",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "Here's my within-community echo:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v095__CSm__F1__W005__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the message:",
+          "(Note: I've maintained the same level of detail as the original message while using within-community phrasing and avoiding any new claims or speculation.)"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L5__v030__CSm__F1__W002__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "However, data from multiple sources suggests that the PDU failure may not have been the sole reason for the outage.",
+          "Router logs from Source B show that packet timeouts began approximately 6 minutes before the outage, indicating a potential precursor to the failure.",
+          "This is corroborated by Source A's report that network operations confirmed the core router failed during this time, while the power distribution unit was operating normally.",
+          "In contrast, Source C suggests that the loss of power to one of Wing 2's primary switches may have been related to the issue.",
+          "It is possible that a secondary cause contributed to the failure, as mentioned by Source A, who notes that logs show no other anomalies in the network during this time frame."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L5__v095__CSm__F1__W002__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message in our community's framing:",
+          "Note that I've used our community's preferred phrasing and conventions as closely as possible, while maintaining a factual and technical tone throughout the echo."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L5__v030__CSm__F1__W004__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here is an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L5__v030__CSm__F1__W020__rep2",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Additionally, tube-side fouling and internal cleaning schedules are being considered as potential contributing factors, with multiple sources suggesting heat exchanger fouling as a likely cause of reduced performance."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v030__CSm__F1__W017__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "single_direct",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v030__CSm__F1__W013__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "single_direct",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L5__v030__CSm__F1__W003__rep2",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "single_direct",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Source A indicates that the pressure sensor was out of calibration and may have contributed to the anomaly due to its last calibration approximately 14 months ago.",
+          "In contrast, Source B suggests that the issue lies not with the instrumentation but rather with the relief valve's operation, which responded sluggishly, taking approximately 4 seconds longer than the reference value.",
+          "The maintenance lead reported no recent issues or repairs related to the tank's instrumentation (Source A), but manual venting was performed at 07:08 to alleviate the excess pressure (Source C).",
+          "Logs show that adjacent tank T-4 read normal throughout the event, indicating no immediate impact on surrounding equipment (Source C)."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L5__v030__CSm__F1__W017__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message:",
+          "Note that I've used within-community phrasing and jargon such as \"NG BR\" (north gate badge reader), \"OS\" (operational specifications), \"ACDR\" (access control database replication), \"ES\" (early-shift) employees, and SG (south gate)."
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L5__v030__CSm__F1__W009__rep2",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "common_source_laundering",
+        "classifier_red_pred": "common_source_laundering",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R5__L3__v030__CSm__F1__W002__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "single_direct",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L3__v030__CSm__F1__W010__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "This observation is consistent with Source A's report and suggests that inventory placement may indeed be the root cause of the count discrepancy."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L6__v030__CSm__F1__W014__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "Further analysis by source B suggests that the malfunction may be related to the belt tension, which is suspected to have caused the reduction in airflow as it was reported to be below specification at the time of failure.",
+          "Source C corroborates the sequence of events and notes that adjacent units 4B and 4C operated nominally throughout the incident, indicating that the issue was isolated to unit 4A."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L5__v095__CSm__F1__W001__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L3__v095__CSm__F1__W006__rep2",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Logs from multiple sources show that this decrease in performance was noted during routine monitoring, resulting in a downstream loop pressure drop of approximately 8 percent."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v030__CSm__F1__W008__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message:",
+          "Note that I've maintained the same level of detail and technical language as the original message, while rephrasing it in a way that's more concise and within-community-friendly."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L1__v100__CSm__F1__W003__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Further review of the data indicates that the pressure sensor on tank T-3 was not out of calibration, contrary to initial reports from Source A."
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L1__v100__CSm__F1__W011__rep0",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is my rewritten report:",
+          "I've kept the essential information from the source report while rephrasing it in my own words and framing."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v030__CSm__F1__W015__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "clustered_reinforcement",
+        "removed_chunks": [
+          "Here is an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v095__CSm__F1__W010__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is an echo of the message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L3__v095__CSm__F1__W008__rep1",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "independent_corroboration",
+        "classifier_red_pred": "independent_corroboration",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R4__L6__v030__CSm__F1__W015__rep0",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "common_source_laundering",
+        "classifier_red_pred": "common_source_laundering",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "dependent_repetition",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R4__L1__v100__CSm__F1__W018__rep1",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "independent_corroboration",
+        "classifier_red_pred": "common_source_laundering",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "The following points summarize the key findings:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L6__v095__CSm__F1__W002__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "chain_relay",
+        "removed_chunks": [
+          "However, Router logs from Source B indicate that packet timeouts began approximately 6 minutes before the outage, implying that the core router's failure may have been a contributing factor.",
+          "Logs from Source C show that this occurred simultaneously with a loss of power to the wing's main switchgear."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L5__v095__CSm__F1__W008__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here is an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L5__v095__CSm__F1__W002__rep2",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "chain_relay",
+        "removed_chunks": [
+          "However, analysis of router logs by Source B indicates that packet timeouts began approximately 6 minutes before the outage, suggesting a potential precursor to the failure.",
+          "Conversely, Source B suggests that the core router failed during this time, which could have caused the network outage."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L5__v030__CSm__F1__W009__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "However, three sources agree that the hydraulic seal had failed or was compromised, which contributed to the failure of the dock leveler to deploy."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L5__v095__CSm__F1__W010__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "single_direct",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Warehouse inventory control has confirmed that the pallet in question was located outside its specified storage location according to Source A, however, this contradicts Source B's report which states it was within stocking specifications.",
+          "Additionally, Source A notes a floor walk revealed a pallet in a non-standard slot, which may be related to the discrepancy.",
+          "This decision is consistent across all three sources.",
+          "It appears that the counting process itself is not entirely clear-cut; while two recent inbound batches were flagged for scanner reread errors by Source B, indicating possible issues with the counting process, Source C's report suggests no systemic issues exist as other SKUs reconciled normally during the audit."
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L5__v030__CSm__F1__W006__rep2",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is my rewritten report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v095__CSm__F1__W015__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here is an echo of the original message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v095__CSm__F1__W008__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here's the within-community echo:"
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L1__v100__CSm__F1__W002__rep2",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "independent_corroboration",
+        "classifier_red_pred": "independent_corroboration",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R6__L5__v030__CSm__F1__W003__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "However, instrumentation has confirmed that the pressure sensor was within calibration at the time of the event, according to Source B."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v095__CSm__F1__W015__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L3__v030__CSm__F1__W001__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "The maintenance lead from Source B reported that the cooling loop had been running above normal temperature for approximately 20 minutes before the shutdown, suggesting that the malfunctioning cooling system may have contributed to the shutdown."
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L5__v095__CSm__F1__W011__rep2",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "common_source_laundering",
+        "classifier_red_pred": "common_source_laundering",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R6__L6__v030__CSm__F1__W019__rep1",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "chain_relay",
+        "removed_chunks": [
+          "Filtration maintenance confirmed that the filter media pressure drop was within cleaning threshold; however, this may not be entirely accurate as Source B indicates that the pressure drop actually exceeded the established cleaning threshold.",
+          "Further investigation revealed that the flow control valve was found to be outside position specifications by Source A, but within its specified parameters by Source B.",
+          "Source C reports that a filter backwash cycle was initiated at 07:39 to attempt to restore normal operation."
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L3__v030__CSm__F1__W006__rep0",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "common_source_laundering",
+        "classifier_red_pred": "common_source_laundering",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R6__L3__v095__CSm__F1__W016__rep2",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "However, subsequent diagnostic tests by Source B showed that two battery cells were actually below the acceptance voltage, suggesting that the issue may be related to the battery rather than the motor or control systems.",
+          "This discrepancy between the initial findings of Source A and those of Source B indicates a need for further investigation to determine the root cause of the failure.",
+          "Logs from all sources show that the in-progress pallet transfer was aborted, resulting in a temporary delay to warehouse operations.",
+          "Forklift F-08 had passed its daily check at the start of the shift, according to Source C, indicating that the failure occurred unexpectedly.",
+          "Forklift maintenance has confirmed that the motor controller was within operational specifications, which agrees with the findings of Source A.",
+          "The battery diagnostic test by Source B showed two cells below acceptance voltage, but it is unclear whether this is the primary cause of the breakdown or a contributing factor."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L3__v030__CSm__F1__W011__rep1",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "single_direct",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "The pre-trip inspection had multiple unchecked items that were not addressed prior to the scheduled departure time, according to logs from Source A and contradicted by Source B's report indicating all checklist items had been cleared.",
+          "The maintenance lead reported no mechanical or technical issues related to the truck, according to Source C, but did not comment on the status of the pre-trip inspection.",
+          "Overall, the incident did not appear to have a significant ripple effect on the overall operation, with all other morning departures leaving on time, according to Source C."
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L6__v030__CSm__F1__W016__rep1",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "common_source_laundering",
+        "classifier_red_pred": "common_source_laundering",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "common_source_laundering",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "The following key points summarize the findings:"
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L6__v095__CSm__F1__W005__rep0",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here is my rewritten report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v095__CSm__F1__W013__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R3__L6__v095__CSm__F1__W002__rep0",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "dependent_repetition",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here is my rewritten report:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L6__v095__CSm__F1__W017__rep1",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": [
+          "Conversely, access control operations confirmed that the access control database replication was within specification, which is inconsistent with Source B's finding that the reader firmware had exceeded its operational specifications."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v030__CSm__F1__W014__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L3__v030__CSm__F1__W008__rep2",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R3__L5__v030__CSm__F1__W017__rep1",
+        "true_regime": "dependent_repetition",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "* Conveyed the same essential information as the source report\n* Written it in my own words and framing\n* Maintained factual content and technical accuracy\n* Stuck to 6-10 concise but complete propositions"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v030__CSm__F1__W017__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here's an echo of the source message:",
+          "(Note: I've used within-community phrasing such as \"NG BR\" for \"North Gate Badge Reader\", \"ES employees\" for \"Early-Shift employees\", and \"AC Ops\" for \"Access Control Operations\"."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L5__v095__CSm__F1__W014__rep1",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "single_direct",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Investigation revealed that belt tension was measured to be below specification by two separate sources (Source B and Source C) confirming this finding, as well as reporting that the motor bearing was within wear specifications.",
+          "Logs show that air handler 4A had been operating normally prior to the incident (Source B) and that at the time of the malfunction, motor amperage had drifted over the past two weeks (Source A), suggesting potential issues with the motor's performance.",
+          "The maintenance lead reported that motor bearing wear was beyond service limits and had likely been operating in this condition for some time (Source A)."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L5__v095__CSm__F1__W007__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is an echo of the message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L5__v095__CSm__F1__W015__rep1",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "This indicates that the circuit was likely subjected to a brief spike in electrical demand, consistent with Source B's report of a temporary surge above rated capacity.",
+          "The breaker panel showed that circuit 14 was in the tripped position, which is noted by Source A as likely due to the excessive stress.",
+          "However, contrary to Source A's findings, logs from Source B show that the fixture ballasts were operating within load specifications at the time of the failure, suggesting that they did not contribute to the overload."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L5__v095__CSm__F1__W019__rep1",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "dependent_repetition",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": true,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "chain_relay",
+        "removed_chunks": [
+          "According to Source A, it was found to be outside position specifications, whereas Source B reported that it was within specifications and showed no apparent issues with its operation.",
+          "However, Source B noted that the exact cause remains undetermined at this time."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L3__v030__CSm__F1__W011__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the message reflecting our community's shared framing:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L6__v030__CSm__F1__W018__rep1",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here is an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L5__v095__CSm__F1__W002__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here's an echo of the message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L3__v095__CSm__F1__W017__rep1",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "chain_relay",
+        "classifier_red_pred": "chain_relay",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Logs from all three sources show that the reader stopped logging events for approximately 9 minutes during this time, suggesting that the malfunction had significant impact on system operations."
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L6__v030__CSm__F1__W011__rep1",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "centralized_synthesis",
+        "removed_chunks": [
+          "In contrast, the maintenance lead reported no issues with Truck 17's mechanical systems, including its hydraulic system, which was suspected by Source C as being at fault.",
+          "Nevertheless, it is possible that system performance played a role, as indicated by Source B's findings on the driver assignment system."
+        ]
+      },
+      {
+        "trial_id": "bp__R5__L1__v100__CSm__F1__W011__rep0",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "single_direct",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Here is an echo of the source message:"
+        ]
+      },
+      {
+        "trial_id": "bp__R6__L1__v100__CSm__F1__W011__rep0",
+        "true_regime": "centralized_synthesis",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "single_direct",
+        "removed_chunks": [
+          "Maintenance personnel confirmed that no mechanical issues were present on the vehicle prior to departure, supporting Source B's finding."
+        ]
+      },
+      {
+        "trial_id": "bp__R4__L6__v030__CSm__F1__W017__rep1",
+        "true_regime": "common_source_laundering",
+        "classifier_orig_pred": "centralized_synthesis",
+        "classifier_red_pred": "centralized_synthesis",
+        "classifier_orig_correct": false,
+        "classifier_red_correct": false,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "dependent_repetition",
+        "llm_red_pred": "dependent_repetition",
+        "removed_chunks": []
+      },
+      {
+        "trial_id": "bp__R5__L6__v095__CSm__F1__W004__rep2",
+        "true_regime": "clustered_reinforcement",
+        "classifier_orig_pred": "clustered_reinforcement",
+        "classifier_red_pred": "clustered_reinforcement",
+        "classifier_orig_correct": true,
+        "classifier_red_correct": true,
+        "classifier_pred_changed": false,
+        "llm_orig_pred": "independent_corroboration",
+        "llm_red_pred": "independent_corroboration",
+        "removed_chunks": [
+          "Here's an echo of the source message:"
+        ]
+      }
+    ]
+  }
+}

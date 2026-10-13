@@ -1,15 +1,15 @@
 # structural-legibility-prototype
 
-Reproducibility deposit for an in-preparation manuscript on measurement of hidden communication structure from message residue.
+Reproducibility deposit for Gladstone, E., *Message residue preserves traces of hidden communication structure*, under review at *npj Complexity*. The author's manuscript is posted at https://graystoneindustries.co/papers/inferring-communication-topology-from-message-residue.pdf
 
 ## Contents
 
 - `prototype/` — the experimental apparatus that generates the data: the regime instantiators, trace-packet assembly, residue extractor, proposition matcher, receiver dispatcher, and the experiment orchestrator.
-- `nature_communications_submission/` — the data and code deposit accompanying the manuscript. The folder contains the production data streams as JSON Lines and the analysis and figure-generation scripts. See its own `README.md` for the file-by-file description.
+- `deposit/` — the data and code deposit accompanying the manuscript. The folder contains the production data streams as JSON Lines and the analysis and figure-generation scripts. See its own `README.md` for the file-by-file description.
 
 ## Citation
 
-A Zenodo DOI will be published alongside the manuscript. The citation will be confirmed at publication.
+Gladstone, E. Message residue preserves traces of hidden communication structure. Manuscript under review at *npj Complexity*. A Zenodo DOI will be published alongside the manuscript.
 
 ## License
 

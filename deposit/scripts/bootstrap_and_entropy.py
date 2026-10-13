@@ -8,7 +8,7 @@
 (3) Predicted-label entropy on the cross-family (F2) slice, paired against
     the F1 numbers already in Supplementary Figure 2.
 
-Writes a Markdown table to 05_supplementary_information/bootstrap_and_entropy.md.
+Writes a Markdown table to outputs/bootstrap_and_entropy.md.
 """
 
 from __future__ import annotations
@@ -22,7 +22,7 @@ import numpy as np
 import pandas as pd
 
 # Allow imports from the figure-style module.
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "03_figures" / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import figure_style as fs
 
 from sklearn.linear_model import LogisticRegression
@@ -30,8 +30,7 @@ from sklearn.preprocessing import StandardScaler
 
 PROJECT_ROOT = fs.PROJECT_ROOT
 DATA_DIR = fs.DATA_DIR
-OUT_PATH = PROJECT_ROOT / "Nature Communications Submission" / \
-    "05_supplementary_information" / "bootstrap_and_entropy.md"
+OUT_PATH = PROJECT_ROOT / "outputs" / "bootstrap_and_entropy.md"
 
 RNG = np.random.default_rng(20260602)
 B = 5000  # bootstrap resamples
@@ -258,6 +257,7 @@ def main() -> None:
         "pattern recurs on the cross-family slice.\n"
     )
 
+    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text("\n".join(lines))
     print(f"wrote {OUT_PATH}")
     print()

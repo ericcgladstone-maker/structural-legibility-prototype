@@ -1,4 +1,4 @@
-"""Shared style and data loaders for the Nature Communications figure set.
+"""Shared style and data loaders for the message-residue figure set.
 
 Every figure script imports from this module so colours, fonts, motif order,
 and data-loading conventions stay consistent across Figs 1-4 and SI 1-3.
@@ -21,15 +21,12 @@ import pandas as pd
 # ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
-# scripts/ -> 03_figures/ -> Nature Communications Submission/ -> project root
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
-DATA_DIR = PROJECT_ROOT / "prototype" / "outputs"
-FIGURES_DIR = PROJECT_ROOT / "Nature Communications Submission" / "03_figures"
+# scripts/ -> deposit/ (data/, scripts/, outputs/)
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DATA_DIR = PROJECT_ROOT / "data"
+FIGURES_DIR = PROJECT_ROOT / "outputs" / "figures"
 MAIN_FIGURES_DIR = FIGURES_DIR / "main"
-SI_FIGURES_DIR = (
-    PROJECT_ROOT / "Nature Communications Submission"
-    / "05_supplementary_information" / "figures"
-)
+SI_FIGURES_DIR = PROJECT_ROOT / "outputs" / "supplementary_figures"
 
 # ---------------------------------------------------------------------------
 # Motif canonical order + display labels + Fig-2 cue phrases
@@ -122,7 +119,7 @@ CHANCE_COLOR = "#888888"
 # Typography
 # ---------------------------------------------------------------------------
 def apply_style() -> None:
-    """Set Matplotlib rcParams for Nature-style figures.
+    """Set Matplotlib rcParams for journal figures.
 
     Call once at the top of every figure script.
     """
@@ -149,7 +146,7 @@ def apply_style() -> None:
     })
 
 
-# Nature Communications widths (mm); 25.4 mm per inch.
+# Journal figure widths (mm); 25.4 mm per inch.
 WIDTH_SINGLE_IN = 89 / 25.4
 WIDTH_DOUBLE_IN = 183 / 25.4
 
@@ -396,8 +393,8 @@ def save_figure(
 ) -> None:
     """Write a figure as <stem>.pdf (+ optional 600 dpi PNG).
 
-    Main figures go to 03_figures/main/. Supplementary figures go to
-    05_supplementary_information/figures/.
+    Main figures go to outputs/figures/main/. Supplementary figures go to
+    outputs/supplementary_figures/.
     """
     out_dir = SI_FIGURES_DIR if supplementary else MAIN_FIGURES_DIR
     out_dir.mkdir(parents=True, exist_ok=True)

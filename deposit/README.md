@@ -10,6 +10,7 @@ Twenty fixed event records, four primary-run JSON Lines streams with their deriv
 
 | File | Records | Description |
 |---|---:|---|
+| `paper1_preempt_analyses.json` | 1 | Aggregates for the full 14-feature and length-only classifiers on the test split, read by Figure 4 panel a. |
 | `worlds_v0_2.jsonl` | 20 | Structured event records that anchor every experimental cell. Each carries a core observed event, competing causal hypotheses with their supporting evidence, peripheral operational details, and a built-in conflict pair with proposition truth values, uncertainty levels, and evidence types. The records are synthetic, not empirical events. |
 | `machine_tracing_bprime_v0_1.lineage.jsonl` | 4,200 | Production-graph instantiation records for the primary run: message sequences, persona assignments, hop structure, and the underlying language-model calls. One record per trial. |
 | `machine_tracing_bprime_v0_1.trace_packets.jsonl` | 4,200 | Trace packets as presented to the reader at trace levels L1, L3, L5, and L6, with the validity coefficient applied. |
@@ -34,7 +35,7 @@ Twenty fixed event records, four primary-run JSON Lines streams with their deriv
 
 ## How to run
 
-The figure and bootstrap scripts read the JSON Lines streams from `data/` via the loaders in `figure_style.py`. With the deposit unpacked, each script can be executed independently from this `scripts/` folder. The figure scripts produce vector PDF and 600-dpi PNG outputs. The bootstrap script writes a single Markdown summary with paired-bootstrap intervals and entropy values, and prints a one-line summary to standard output.
+The figure and bootstrap scripts read the JSON Lines streams from `data/` via the loaders in `figure_style.py`. Each script can be executed independently from the `scripts/` folder, for example `cd deposit/scripts && python3 make_figure_1.py`. The figure scripts write vector PDF and 600-dpi PNG outputs to `outputs/figures/main/` and `outputs/supplementary_figures/`. The bootstrap script writes `outputs/bootstrap_and_entropy.md`, a single Markdown summary with paired-bootstrap intervals and entropy values, and prints a one-line summary to standard output.
 
 The sibling `prototype/` folder of this repository contains the upstream experimental apparatus that generates the data streams above (regime instantiators, trace-packet assembly, residue extractor, proposition matcher, receiver dispatcher, and the experiment orchestrator). The deposit here is sufficient for reproducing the reported analyses and figures from the existing data without re-running the upstream apparatus.
 
